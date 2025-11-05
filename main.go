@@ -51,5 +51,5 @@ func converter(m smap, frist_val string, second_val string, sum float64) float64
 	course_x := m[frist_val]
 	course_y := m[second_val]
 	result := (sum * course_y) / course_x
-	return result
+	return result //res
 }
