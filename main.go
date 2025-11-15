@@ -20,7 +20,7 @@ func main() {
 			fmt.Println("Error: ", err)
 			continue
 		}
-		result := converter(m, frist_val, second_val, sum)
+		result := converter(&m, frist_val, second_val, sum)
 		fmt.Println(result)
 		fmt.Println("Желаете попробовать снова? y/n")
 		fmt.Scan(&x)
@@ -47,9 +47,9 @@ func userInput() (string, string, float64, error) {
 	return frist_val, second_val, sum, nil
 
 }
-func converter(m smap, frist_val string, second_val string, sum float64) float64 {
-	course_x := m[frist_val]
-	course_y := m[second_val]
+func converter(m *smap, frist_val string, second_val string, sum float64) float64 {
+	course_x := (*m)[frist_val]
+	course_y := (*m)[second_val]
 	result := (sum * course_y) / course_x
-	return result //res
+	return result
 }
